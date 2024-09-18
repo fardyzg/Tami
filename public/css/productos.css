@@ -1,0 +1,272 @@
+@media screen and (min-width: 830px) {
+  .menu__item:nth-child(3) {
+    background-color: var(--color-primario1);
+    position: relative;
+  }
+
+  .menu__item:nth-child(3)::before {
+    content: "";
+    display: block;
+    height: 2rem;
+    width: 30%;
+    position: absolute;
+    bottom: -.9rem;
+    transform: translate(50%) rotate(52deg);
+    z-index: -1;
+    background-color: var(--color-primario1);
+    border: 2px solid gray;
+  }
+}
+
+figure,
+h2 {
+  margin: 0;
+}
+
+.main__productos {
+  background-color: rgb(177, 228, 228);
+  padding: .1px;
+}
+
+@media screen and (min-width: 830px) {
+  .main__productos {
+    margin-top: 7rem;
+  }
+}
+
+.productos__titulo {
+  text-align: center;
+  color: var(--color-botones);
+  margin: 2.3rem;
+  font-size: var(--fontsize-titulo);
+  animation: productos__titulo 2.5s;
+}
+
+@media screen and (min-width: 830px) {
+  .productos__titulo {
+    font-size: 2.5rem;
+  }
+}
+
+@keyframes productos__titulo {
+  from {
+    transform: translate(-100%);
+  }
+}
+
+.productos__video {
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  padding: 1rem;
+  animation: productos__video 2.5s;
+}
+
+@media screen and (min-width: 830px) {
+  .productos__video {
+    width: 56%;
+  }
+}
+
+@keyframes productos__video {
+  from {
+    transform: translate(100%);
+  }
+}
+
+.productos__catalogo {
+  background-color: var(--color-botones);
+  padding: .1rem;
+}
+
+.productos__tituloCatalogo {
+  text-align: center;
+  color: white;
+  font-size: var(--fontsize-titulo);
+  margin: 2rem 0;
+  margin-bottom: 1.5rem;
+  animation: productos__tituloCatalogo 1.5s;
+  animation-play-state: var(--stop);
+}
+
+@media screen and (min-width: 830px) {
+  @keyframes productos__tituloCatalogo {
+    from {
+      transform: translate(100%);
+    }
+  }
+}
+
+.productos__imagenes {
+  margin: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  text-align: center;
+  grid-gap: 1rem;
+  font-size: var(--fontsize-small);
+}
+
+@media screen and (min-width: 690px) {
+  .productos__imagenes {
+    font-size: var(--fontsize-normal);
+  }
+}
+
+@media screen and (min-width: 830px) {
+  .productos__imagenes {
+    grid-template-columns: repeat(4, 1fr);
+    margin: 5rem;
+    margin-top: 0;
+  }
+}
+
+.productos__item {
+  margin: 1rem;
+  width: 70%;
+  position: relative;
+  background-color: white; /* Agregar fondo blanco */
+  padding: 15px; 
+}
+
+@media screen and (min-width: 830px) {
+  .productos__item {
+    width: 100%;
+  }
+}
+
+.productos__link1,
+.productos__link2 {
+  text-decoration: none;
+  color: white;
+}
+
+.productos__link2 {
+  color: black;
+  display: block;
+}
+
+.productos__img {
+  height: 97px;
+  width: 100%;
+  object-fit: fill; /* Hans - Cambio de cover a fill */ 
+}
+
+@media screen and (min-width: 815px) {
+  .productos__img {
+    height: 85%;
+  }
+}
+
+.productos__description {
+  display: block;
+  position: absolute;
+  background-color: rgb(246, 246, 246, .5);
+  width: 100%;
+  height: 15%;
+  bottom: 23%;
+  color: black;
+  opacity: 0;
+  text-decoration: none;
+  transition: opacity .4s;
+  position: relative;
+}
+
+@media screen and (min-width: 830px) {
+  .productos__item:hover .productos__description {
+    opacity: 1;
+    color: black;
+  }
+}
+
+
+.modal {
+  display: none; /* Oculta el modal por defecto */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semi-transparente */
+  backdrop-filter: blur(10px);
+  z-index: 999999;
+  overflow: auto;
+  transition: .3s ease;
+}
+
+/* Estilo del contenido del modal */
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto; /* Centra verticalmente con un pequeño margen superior */
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* Estilo del botón de cierre en el modal */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #555;
+}
+
+/* Estilo para el título del modal */
+.modal-content h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+/* Estilo para la imagen del producto */
+.modal-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para el precio */
+.modal-content p {
+  font-size: 18px;
+  color: #333;
+  margin-top: 15px;
+}
+
+/* Estilo para animar la apertura del modal */
+.modal.fade-in {
+  animation: fadeIn 0.3s ease;
+}
+
+/* Estilo para animar el cierre del modal */
+.modal.fade-out {
+  animation: fadeOut 0.3s ease;
+}
+
+/* Definición de las animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
